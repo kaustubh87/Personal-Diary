@@ -4,6 +4,13 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:27017/personal-diary');
+var db = mongoose.connection;
+db.once('open', function(){
+  console.log('Database connected');
+});
+
 var app = express();
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -24,12 +31,12 @@ var env = 'development';
 if (app.get(env == 'development'))
 {
 app.listen(3000, function () {
-console.log('Example listening on port 3000!');
+console.log('Example listening on port 3000');
 });
 }
 else{
 app.listen(8080, function () {
-console.log('Example listening on port 8080!');
+console.log('Example listening on port 8080');
 });
 }
 module.exports = app;
