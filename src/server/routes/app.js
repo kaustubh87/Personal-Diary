@@ -10,7 +10,7 @@ router.get('/', function (req, res, next) {
     res.render('node');
 });
 
-router.post('/save', function (req, res , next){
+router.post('/', function (req, res, next){
     var firstname = req.body.firstname;
     var lastname = req.body.lastname;
     var password = req.body.password;
