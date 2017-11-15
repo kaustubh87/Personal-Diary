@@ -24,7 +24,11 @@ router.post('/', function (req, res, next){
     });
 
     user.save();
-    res.redirect('/');
+    res.redirect('/home');
+});
+
+router.get('/home', function(req, res, next){
+  res.render('home');
 });
 
 
