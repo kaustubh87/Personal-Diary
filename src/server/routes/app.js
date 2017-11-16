@@ -31,5 +31,9 @@ router.get('/home', function(req, res, next){
   res.render('home');
 });
 
+router.post('/save', function(req,res,next){
+  res.render('node');
+});
+
 
 module.exports = router;
