@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../models/User');
+var Contact = require('../models/Contacts');
 
 router.get('/', function (req, res, next) {
   User.findOne({}, function(){
@@ -32,6 +33,13 @@ router.get('/home', function(req, res, next){
 });
 
 router.post('/save', function(req,res,next){
+  var firstName = req.body.firstName;
+  var lastName = req.body.lastName;
+  var contact = new Contact({
+    firstName: firstName,
+    lastName: lastName
+  });
+  user.save();
   res.render('node');
 });
 
