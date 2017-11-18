@@ -15,7 +15,8 @@ var contactsSchema = new Schema({
     default : new Date()
   },
   user: {
-    type: Schema.Types.ObjectId
+    type: Schema.Types.ObjectId,
+    ref: 'Users'
   }
 });
 
