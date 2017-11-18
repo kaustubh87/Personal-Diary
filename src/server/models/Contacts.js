@@ -13,6 +13,9 @@ var contactsSchema = new Schema({
   dob : {
     type: Date,
     default : new Date()
+  },
+  user: {
+    type: Schema.Types.ObjectId
   }
 });
 
