@@ -18,7 +18,11 @@ var userSchema = new Schema({
         type: String,
         required: true,
         unique: true
-    }
+    },
+    contacts: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Contacts'
+    }]
 });
 
 module.exports = mongoose.model('Users', userSchema);
