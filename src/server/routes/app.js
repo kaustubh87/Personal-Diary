@@ -43,5 +43,15 @@ router.post('/save', function(req,res,next){
   res.render('node');
 });
 
+router.get('/', function(req,res,next){
+  User.findOne({}, function(err, doc){
+    if(err){
+      return res.send('Error');
+    }
+    res.render('node', {email: doc})
+
+  });
+});
+
 
 module.exports = router;
