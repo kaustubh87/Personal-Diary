@@ -54,8 +54,15 @@ router.get('/', function(req,res,next){
 });
 
 router.get('/user/:id', function(req, res, next){
-  User.findOne({}, function(err, data){
 
+  var id = params.body.id;
+
+
+  User.findById({id}, function(err, data){
+    if(err){
+      return res.send('Error');
+    }
+    res.render('node', {id: data});
   })
 });
 
