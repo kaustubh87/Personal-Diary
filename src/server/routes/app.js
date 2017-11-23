@@ -53,5 +53,11 @@ router.get('/', function(req,res,next){
   });
 });
 
+router.get('/user/:id', function(req, res, next){
+  User.findOne({}, function(err, data){
+
+  })
+});
+
 
 module.exports = router;
