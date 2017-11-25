@@ -63,6 +63,7 @@ router.get('/user/:id', function(req, res, next){
       return res.send('Error');
     }
     res.render('node', {id: data});
+    res.redirect('/home');
   })
 });
 
