@@ -67,5 +67,13 @@ router.get('/user/:id', function(req, res, next){
   })
 });
 
+router.get('/logout', function(err, data){
+  if(err){
+    return res.send('Error');
+  }
+  res.render('logout');
+
+});
+
 
 module.exports = router;
