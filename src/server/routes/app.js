@@ -75,5 +75,12 @@ router.get('/logout', function(err, data){
 
 });
 
+router.get('/login', function(err, data){
+  if(err){
+    return res.send('Error');
+  }
+  res.render('login');
+});
+
 
 module.exports = router;
